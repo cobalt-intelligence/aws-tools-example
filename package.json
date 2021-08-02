@@ -1,0 +1,32 @@
+{
+    "name": "lambda-example",
+    "version": "1.0.0",
+    "description": "An example of how to run code on AWS Lambda using typescript, web requests, AWS DynamoDB.",
+    "main": "./dist/index",
+    "dependencies": {
+        "aws-sdk": "^2.958.0",
+        "axios": "^0.21.1"
+    },
+    "devDependencies": {
+        "@types/node": "^16.4.8",
+        "typescript": "^4.3.5"
+    },
+    "scripts": {
+        "zip": "tsc && 7z a -r function.zip ./dist/*  node_modules/",
+        "sendToLambda": "npm run zip && aws lambda update-function-code --function-name hey-buddy --zip-file fileb://function.zip"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/cobalt-intelligence/lambda-example.git"
+    },
+    "keywords": [
+        "typescript",
+        "aws"
+    ],
+    "author": "Jordan Hansen",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/cobalt-intelligence/lambda-example/issues"
+    },
+    "homepage": "https://github.com/cobalt-intelligence/lambda-example#readme"
+}
